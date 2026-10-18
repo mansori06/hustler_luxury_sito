@@ -1,0 +1,145 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}Collezione — HUSTLER LUXURY{% endblock %}
+{% block description %}Collezione HUSTLER LUXURY: tutti i capi di streetwear italiano nero, bianco e oro. Felpe, magliette, sneakers e coordinati.{% endblock %}
+
+{% block content %}
+  <!-- Hero collezione -->
+  <section class="hero" style="min-height: 50vh; padding: 100px 20px;">
+    <div class="hero-content">
+      <h1>Collezione</h1>
+      <p class="section-subtitle">Tutti i capi Hustler Luxury in un unico posto</p>
+    </div>
+  </section>
+
+  <!-- Filtri e ricerca -->
+  <section class="sezione-animata">
+    <div id="filters" class="filters" style="flex-wrap: wrap; align-items: center;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; flex: 1;">
+        <button type="button" class="filter-btn{% if cat_attiva == 'all' %} active{% endif %}" data-filter="all" onclick="setCategory('all')"{% if cat_attiva == 'all' %} style="background:var(--gold);color:var(--black);border-color:var(--gold)"{% endif %}>Tutti</button>
+        {% for cat in categorie %}
+        <button type="button" class="filter-btn{% if cat_attiva == cat %} active{% endif %}" data-filter="{{ cat }}" onclick="setCategory('{{ cat }}')"{% if cat_attiva == cat %} style="background:var(--gold);color:var(--black);border-color:var(--gold)"{% endif %}>{{ cat }}</button>
+        {% endfor %}
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <input type="text" id="search-input" placeholder="Cerca prodotto..." style="padding: 6px 12px; background: var(--black); color: var(--white); border: 1px solid var(--border-color); font-size: 0.85rem; min-width: 160px;">
+        <select id="sort-select" style="padding: 6px 12px; background: var(--black); color: var(--white); border: 1px solid var(--border-color); font-size: 0.85rem; cursor: pointer;">
+          <option value="default">Ordina per</option>
+          <option value="price-asc">Prezzo crescente</option>
+          <option value="price-desc">Prezzo decrescente</option>
+          <option value="novita">Novità</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contatore -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 4px;">
+      <p id="product-counter" style="font-size: 0.85rem; color: var(--gray-text);">Caricamento prodotti...</p>
+      <p style="font-size: 0.8rem; color: var(--gray-text);" id="view-counter">0 di 0</p>
+    </div>
+
+    <!-- Griglia prodotti (renderizzata server-side con un ciclo for sui prodotti) -->
+    <div id="collection-grid" class="product-grid">
+      {% for product in products %}
+        {% include 'shop/card.html' %}
+      {% empty %}
+        <p style="color:var(--gray-text)">Nessun prodotto disponibile.</p>
+      {% endfor %}
+    </div>
+
+    <!-- Carica altro -->
+    <div class="text-center mt-lg">
+      <button id="load-more" class="btn btn-lg" onclick="loadMore()" style="display: none;">Carica altro</button>
+    </div>
+  </section>
+
+  <div class="mb-lg"></div>
+{% endblock %}
+
+{% block extra_js %}
+  <!-- Collection: filtro/cerca/ordini/paginazione client-side sulle card
+       server-renderate (le card sono identiche a products.card di app.js). -->
+  <script>
+  (function(){
+    const PER_PAGE = 9;
+    let visibleCount = PER_PAGE;
+    let currentCategory = 'all';
+    let currentSort = 'default';
+    let searchTerm = '';
+    let filtered = [];
+
+    function syncFav(){
+      document.querySelectorAll('.fav-toggle').forEach(function(b){
+        const card = b.closest('.product-card');
+        if(card) b.classList.toggle('on', fav.has(card.dataset.id));
+      });
+    }
+    window.setCategory = function(cat){
+      currentCategory = cat;
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(function(el){
+        el.style.background=''; el.style.color=''; el.style.borderColor='';
+      });
+      const active = document.querySelector('.filter-btn[data-filter="'+cssEscape(cat)+'"]');
+      if(active){ active.style.background='var(--gold)'; active.style.color='var(--black)'; active.style.borderColor='var(--gold)'; }
+      applyFilters();
+    };
+    function cssEscape(s){ return s.replace(/"/g,'\\"'); }
+    function getUrlCategory(){
+      const params = new URLSearchParams(location.search);
+      return params.get('cat') || 'all';
+    }
+    function applyFilters(){
+      let result = Array.from(document.querySelectorAll('#collection-grid .product-card'));
+      if(currentCategory !== 'all'){
+        result = result.filter(function(c){ return c.dataset.categoria === currentCategory; });
+      }
+      if(searchTerm.trim()){
+        const term = searchTerm.toLowerCase();
+        result = result.filter(function(c){ return c.dataset.nome.toLowerCase().includes(term); });
+      }
+      if(currentSort === 'price-asc'){
+        result.sort(function(a,b){ return +a.dataset.prezzo - +b.dataset.prezzo; });
+      } else if(currentSort === 'price-desc'){
+        result.sort(function(a,b){ return +b.dataset.prezzo - +a.dataset.prezzo; });
+      } else if(currentSort === 'novita'){
+        result.sort(function(a,b){ return (b.dataset.novita==='true'?1:0) - (a.dataset.novita==='true'?1:0); });
+      }
+      filtered = result;
+      visibleCount = PER_PAGE;
+      renderProducts();
+    }
+    function renderProducts(){
+      const grid = document.getElementById('collection-grid');
+      filtered.forEach(function(c){ grid.appendChild(c); });
+      const all = Array.from(grid.children);
+      all.forEach(function(c,i){ c.style.display = i < visibleCount ? '' : 'none'; });
+      const counter = document.getElementById('view-counter');
+      if(counter) counter.textContent = visibleCount + ' di ' + filtered.length + ' prodotti';
+      const loadMore = document.getElementById('load-more');
+      if(loadMore) loadMore.style.display = visibleCount < filtered.length ? 'inline-block' : 'none';
+      let msg = searchTerm ? 'Ricerca "'+searchTerm+'"' : (currentCategory !== 'all' ? currentCategory : 'Tutti i prodotti');
+      const pc = document.getElementById('product-counter');
+      if(pc) pc.textContent = filtered.length + ' prodotti trovati — ' + msg;
+      syncFav();
+    }
+    window.loadMore = function(){ visibleCount += PER_PAGE; renderProducts(); };
+
+    function initCollection(){
+      currentCategory = getUrlCategory();
+      if(currentCategory !== 'all'){
+        const active = document.querySelector('.filter-btn[data-filter="'+cssEscape(currentCategory)+'"]');
+        if(active){ active.style.background='var(--gold)'; active.style.color='var(--black)'; active.style.borderColor='var(--gold)'; }
+      }
+      applyFilters();
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      syncFav();
+      initCollection();
+      const si = document.getElementById('search-input');
+      if(si){ si.addEventListener('input', function(e){ searchTerm = e.target.value; applyFilters(); }); }
+      const ss = document.getElementById('sort-select');
+      if(ss){ ss.addEventListener('change', function(e){ currentSort = e.target.value; applyFilters(); }); }
+    });
+  })();
+  </script>
+{% endblock %}

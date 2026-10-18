@@ -1,0 +1,159 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}HUSTLER LUXURY — Streetwear{% endblock %}
+{% block description %}HUSTLER LUXURY: streetwear italiano. Felpe, t-shirt, jeans, sneakers e coordinati. Spedizione gratuita sopra €100.{% endblock %}
+
+{% block content %}
+  <!-- Hero slider -->
+  <section class="hero-slider">
+    <div class="hero-slide active">
+      <img src="{% static 'shop/images/hero-bg.jpg' %}" alt="HUSTLER LUXURY">
+      <div class="hero-content">
+        <h1>HUSTLER LUXURY</h1>
+        <p>Streetwear italiano. Nuovi drop ogni settimana.</p>
+        <a href="{% url 'shop:collection' %}" class="btn-primary">Scopri la collezione</a>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img src="{{ p1.image.url }}" alt="Hoodie nera">
+      <div class="hero-content"><h2>Drop 01 · Hoodie</h2><a href="{% url 'shop:product_detail' 'prod-01' %}" class="btn-primary">Acquista ora</a></div>
+    </div>
+    <div class="hero-slide">
+      <img src="{{ p4.image.url }}" alt="Coordinati">
+      <div class="hero-content"><h2>Coordinati</h2><a href="{% url 'shop:collection' %}?cat=Coordinati" class="btn-primary">Scopri</a></div>
+    </div>
+    <div class="hero-slide">
+      <img src="{{ p3.image.url }}" alt="Jeans">
+      <div class="hero-content"><h2>Jeans &amp; Pantaloni</h2><a href="{% url 'shop:collection' %}?cat=Jeans%20%26%20Pantaloni" class="btn-primary">Scopri</a></div>
+    </div>
+    <div class="hero-slide">
+      <img src="{{ p2.image.url }}" alt="T-shirt">
+      <div class="hero-content"><h2>T-shirt grafiche</h2><a href="{% url 'shop:collection' %}?cat=T-Shirt" class="btn-primary">Scopri</a></div>
+    </div>
+    <div class="hero-arrows">
+      <button class="hero-arrow hero-prev" aria-label="Precedente">‹</button>
+      <button class="hero-arrow hero-next" aria-label="Successiva">›</button>
+    </div>
+    <div class="hero-dots"></div>
+  </section>
+
+  <!-- Nuovi arrivi -->
+  <section class="reveal sezione-animata">
+    <h2 class="section-title">Nuovi arrivi</h2>
+    <p class="section-subtitle">Drop 01</p>
+    <div id="new-arrivals" class="product-grid"></div>
+    <div class="text-center">
+      <p id="new-arrivals-count" class="section-subtitle"></p>
+      <div class="progress"><span id="new-progress" style="width:0"></span></div>
+      <button id="load-more" class="btn btn-outline" onclick="loadMoreNew()">Carica altro</button>
+      <a href="{% url 'shop:collection' %}" class="btn btn-ghost" style="margin-left:8px">Visualizza tutto</a>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="promo-banner reveal">
+    <h2>Spedizione gratis</h2>
+    <p>Per ordini sopra €100. Sotto, la spedizione costa €5,99.</p>
+    <a href="{% url 'shop:collection' %}" class="btn-primary">Acquista ora</a>
+  </section>
+
+  <!-- Coordinati -->
+  <section class="reveal sezione-animata">
+    <h2 class="section-title">Coordinati</h2>
+    <p class="section-subtitle">Outfit completi, pronti da indossare</p>
+    <div id="coordinati-grid" class="product-grid"></div>
+  </section>
+
+  <!-- Jeans -->
+  <section class="reveal sezione-animata">
+    <h2 class="section-title">Jeans &amp; Pantaloni</h2>
+    <p class="section-subtitle">Baggy, cargo e slim</p>
+    <div id="jeans-grid" class="product-grid"></div>
+  </section>
+
+  <!-- Promo 9,99 -->
+  <section id="promo" class="reveal sezione-animata">
+    <h2 class="section-title">In promo a 9,99€</h2>
+    <p class="section-subtitle">Fino a esaurimento scorte</p>
+    <div id="promo-grid" class="product-grid"></div>
+  </section>
+
+  <!-- Categorie -->
+  <section class="reveal">
+    <h2 class="section-title">Categorie</h2>
+    <p class="section-subtitle">Scegli il tuo stile</p>
+    <div id="category-grid" class="category-grid"></div>
+  </section>
+
+  <!-- Servizi -->
+  <section class="services reveal">
+    <div><strong>Spedizione</strong><p class="section-subtitle">Gratis sopra €100</p></div>
+    <div><strong>Assistenza</strong><p class="section-subtitle">Su WhatsApp</p></div>
+    <div><strong>Resi</strong><p class="section-subtitle">Vedi condizioni</p></div>
+    <div><strong>Pagamenti</strong><p class="section-subtitle">Scegli al checkout</p></div>
+  </section>
+
+  <!-- CTA WhatsApp -->
+  <section class="text-center">
+    <h2 class="section-title">Hai un dubbio?</h2>
+    <p class="section-subtitle">Scrivici su WhatsApp per consigli su taglie e disponibilità</p>
+    <a href="#" id="whatsapp-link" class="btn-lg" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
+  <!-- Home: anima JS che popola le griglie usando i dati globali window.PRODUCTS_DATA -->
+  <script>
+  function renderGrid(sel, items) {
+    const g = document.querySelector(sel);
+    if (g) g.innerHTML = items.map(p => products.card(p)).join('');
+  }
+  let newPageSize = 8;
+  function renderNewArrivals() {
+    const nuovi = products.all.slice().reverse();
+    const shown = Math.min(newPageSize, nuovi.length);
+    renderGrid('#new-arrivals', nuovi.slice(0, shown));
+    document.getElementById('new-arrivals-count').textContent = 'Hai visualizzato ' + shown + ' di ' + nuovi.length + ' prodotti';
+    document.getElementById('new-progress').style.width = (shown / nuovi.length * 100) + '%';
+    document.getElementById('load-more').style.display = shown < nuovi.length ? 'inline-block' : 'none';
+  }
+  window.loadMoreNew = () => { newPageSize += 8; renderNewArrivals(); observeCards(); };
+  function renderCategories() {
+    const cats = {};
+    products.all.forEach(p => { const c = p.categoria || 'Altro'; (cats[c] = cats[c] || []).push(p); });
+    document.getElementById('category-grid').innerHTML = Object.entries(cats).map(([c, arr]) =>
+      '<a class="category-card" href="{% url 'shop:collection' %}?cat=' + encodeURIComponent(c) + '"><div class="cat-img"><img src="' + arr[0].immagini[0] + '" alt="' + c + '" loading="lazy"></div>' + c + '</a>'
+    ).join('');
+  }
+  function initSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelector('.hero-dots');
+    if (!slides.length) return;
+    let i = 0, timer;
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('active', k === i));
+      dots.innerHTML = '';
+      slides.forEach((_, k) => {
+        const d = document.createElement('div');
+        d.className = 'hero-dot' + (k === i ? ' active' : '');
+        d.onclick = () => { show(k); restart(); };
+        dots.appendChild(d);
+      });
+    }
+    function restart() { clearInterval(timer); timer = setInterval(() => show(i + 1), 5000); }
+    document.querySelector('.hero-prev').onclick = () => { show(i - 1); restart(); };
+    document.querySelector('.hero-next').onclick = () => { show(i + 1); restart(); };
+    show(0); restart();
+  }
+  const initHome = () => {
+    renderNewArrivals();
+    renderGrid('#coordinati-grid', products.all.filter(p => p.categoria === 'Coordinati'));
+    renderGrid('#jeans-grid', products.all.filter(p => /Jeans/.test(p.categoria)));
+    renderGrid('#promo-grid', products.all.filter(p => p.prezzo === 9.99));
+    renderCategories();
+  };
+  initSlider();
+  if (products.loaded) initHome(); else products.onLoad.push(initHome);
+  </script>
+{% endblock %}

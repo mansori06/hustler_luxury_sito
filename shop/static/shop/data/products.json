@@ -1,0 +1,461 @@
+[
+  {
+    "id": "prod-01",
+    "nome": "HUSTLER HOODIE NERA",
+    "categoria": "Felpe & Maglioni",
+    "prezzo": 59.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Felpa in cotone oversize con logo ricamato oro. Cappuccio aggiuntivo e chiusura a cerniera posteriore. Cotone pesante per una vestibilità sartoriale. Perfetta per look urbani notturni."
+  },
+  {
+    "id": "prod-02",
+    "nome": "TIGER STREET T-SHIRT",
+    "categoria": "T-Shirt",
+    "prezzo": 24.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "T-shirt in cotone stretch con stampa frontale grafica al leopardo. Taglio morbido e vestibilità comoda."
+  },
+  {
+    "id": "prod-03",
+    "nome": "BAGGY STRASS NERO",
+    "categoria": "Jeans & Pantaloni",
+    "prezzo": 39.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Baggy con cintura alta e decorazioni in strass neri. Jeans con vestibilità larga. Ideale per look di scena."
+  },
+  {
+    "id": "prod-04",
+    "nome": "COORD SET ORO",
+    "categoria": "Coordinati",
+    "prezzo": 89.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Completo coordinato con felpa e pantaloni. Logo oro applicato. Ideale per look coordinati in città o fuori."
+  },
+  {
+    "id": "prod-05",
+    "nome": "LONGSLEEVE GRAPHIC",
+    "categoria": "Longsleeve",
+    "prezzo": 29.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Longsleeve nera con stampa grafica frontale. Cotone tecnico respirabile. Perfetta sotto una felpa o da sola."
+  },
+  {
+    "id": "prod-06",
+    "nome": "CAMICIA STREETWEAR",
+    "categoria": "Camicie",
+    "prezzo": 44.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Camicia oversize in lino con stampa grafica. Colletto alato e maniche ampie. Un must per look casual eleganti."
+  },
+  {
+    "id": "prod-07",
+    "nome": "GIUBBINO TECH",
+    "categoria": "Giubbini",
+    "prezzo": 129.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Giubbino tecnico impermeabile nero con fondo oro. Tasche rinforzate e cerniera frontale. Protezione totale in città."
+  },
+  {
+    "id": "prod-08",
+    "nome": "SNEAKERS LOW TOP",
+    "categoria": "Sneakers",
+    "prezzo": 79.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Sneakers basse in pelle nera con suola trasparente. Logo oro applicato. Comfort e stile per strada."
+  },
+  {
+    "id": "prod-09",
+    "nome": "FELPA CON PIEGA",
+    "categoria": "Felpe & Maglioni",
+    "prezzo": 49.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Felpa con piega centrale e logo oro. Cotone pesante. Versatile per layer misti in inverno."
+  },
+  {
+    "id": "prod-10",
+    "nome": "T-SHIRT LOGO",
+    "categoria": "T-Shirt",
+    "prezzo": 9.99,
+    "prezzoBarrato": 22.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": true,
+    "descrizione": "T-shirt bianca con logo HUSTLER oro centrale. Cotone biologico. L'icona del brand da indossare ovunque."
+  },
+  {
+    "id": "prod-11",
+    "nome": "CARGO PANT",
+    "categoria": "Jeans & Pantaloni",
+    "prezzo": 49.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Cargo pant nero con tasche multiple. Vestibilità larga e comoda. Perfetto per look militare streetwear."
+  },
+  {
+    "id": "prod-12",
+    "nome": "COORD JACKET",
+    "categoria": "Coordinati",
+    "prezzo": 79.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Completo coordinato con felpa e pantaloni. Logo oro applicato. Ideale per look coordinati in città o fuori."
+  },
+  {
+    "id": "prod-13",
+    "nome": "OVERSIZE LONGSLEEVE",
+    "categoria": "Longsleeve",
+    "prezzo": 26.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Longsleeve nera oversize con stampa grafica laterale. Cotone tecnico respirabile. Perfetta sotto una felpa o da sola."
+  },
+  {
+    "id": "prod-14",
+    "nome": "CAMICIA WESTERN",
+    "categoria": "Camicie",
+    "prezzo": 39.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Camicia western in lino con stampa grafica. Colletto alato e maniche ampie. Un must per look casual eleganti."
+  },
+  {
+    "id": "prod-15",
+    "nome": "GIUBBINO PUFFER",
+    "categoria": "Giubbini",
+    "prezzo": 99.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Giubbino puffer nero con fondo oro. Tasche rinforzate e cerniera frontale. Protezione totale in città."
+  },
+  {
+    "id": "prod-16",
+    "nome": "SNEAKERS CHUNKY",
+    "categoria": "Sneakers",
+    "prezzo": 89.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Sneakers basse in pelle nera con suola trasparente. Logo oro applicato. Comfort e stile per strada."
+  },
+  {
+    "id": "prod-17",
+    "nome": "MAGLIONE CASHMERE",
+    "categoria": "Felpe & Maglioni",
+    "prezzo": 69.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Maglione nero con logo oro. Morbido e caldo. Versatile per layer misti in inverno."
+  },
+  {
+    "id": "prod-18",
+    "nome": "T-SHIRT MASCARA",
+    "categoria": "T-Shirt",
+    "prezzo": 9.99,
+    "prezzoBarrato": 21.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": true,
+    "descrizione": "T-shirt nera con stampa mascara frontale. Cotone biologico. L'icona del brand da indossare ovunque."
+  },
+  {
+    "id": "prod-19",
+    "nome": "JEANS SLIM FIT",
+    "categoria": "Jeans & Pantaloni",
+    "prezzo": 9.99,
+    "prezzoBarrato": 42.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": true,
+    "descrizione": "Jeans slim fit neri con cintura alta. Ideali per look di scena."
+  },
+  {
+    "id": "prod-20",
+    "nome": "COORD SPORTIVO",
+    "categoria": "Coordinati",
+    "prezzo": 69.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Completo coordinato sportivo con felpa e pantaloni. Logo oro applicato. Ideale per look coordinati in città o fuori."
+  },
+  {
+    "id": "prod-21",
+    "nome": "LONGSLEEVE TECNICO",
+    "categoria": "Longsleeve",
+    "prezzo": 32.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Longsleeve nera con stampa grafica frontale. Cotone tecnico respirabile. Perfetta sotto una felpa o da sola."
+  },
+  {
+    "id": "prod-22",
+    "nome": "CAMICIA OVER",
+    "categoria": "Camicie",
+    "prezzo": 37.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Camicia oversize in lino con stampa grafica. Colletto alato e maniche ampie. Un must per look casual eleganti."
+  },
+  {
+    "id": "prod-23",
+    "nome": "GIUBBINO PARKA",
+    "categoria": "Giubbini",
+    "prezzo": 119.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": false,
+    "promo": false,
+    "descrizione": "Giubbino parka nero con fondo oro. Tasche rinforzate e cerniera frontale. Protezione totale in città."
+  },
+  {
+    "id": "prod-24",
+    "nome": "SNEAKERS RUNNING",
+    "categoria": "Sneakers",
+    "prezzo": 69.99,
+    "immagini": [
+      "/products/foto_per_riguadri.jpeg",
+      "/products/foto_per_riguadri.jpeg"
+    ],
+    "taglie": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "novita": true,
+    "promo": false,
+    "descrizione": "Sneakers running in tessuto nero con suola trasparente. Logo oro applicato. Comfort e stile per strada."
+  }
+]

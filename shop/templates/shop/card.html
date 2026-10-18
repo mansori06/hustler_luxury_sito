@@ -1,0 +1,36 @@
+{% comment %}
+  card.html — card prodotto (usata dalla collezione). L'HTML è identico a
+  products.card() di js/app.js; i dati-nome/ categoria/prezzo servono al
+  filtro/cerca/ordinamento client-side.
+{% endcomment %}
+<div class="product-card" data-id="{{ product.slug }}" data-nome="{{ product.name }}" data-categoria="{{ product.categoria }}" data-prezzo="{{ product.price }}" data-novita="{{ product.novita|yesno:'true,false' }}">
+  {% if product.discount %}
+    <span class="badge-percent">-{{ product.discount }}%</span>
+  {% elif product.novita %}
+    <span class="badge-nuovo">Nuovo</span>
+  {% endif %}
+  <button class="fav-toggle" aria-label="Preferiti" onclick="toggleFavCard(this,'{{ product.slug }}')">
+    <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-9-9.2C1.8 7.5 3.8 4 7.2 4c2 0 3.7 1.2 4.8 3 1.1-1.8 2.8-3 4.8-3 3.4 0 5.4 3.5 4.2 6.8C19 15.4 12 20 12 20z"/></svg>
+  </button>
+  <button class="compare-toggle" aria-label="Confronta" onclick="this.classList.toggle('on')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="6" width="6" height="12" rx="1"/><rect x="15" y="6" width="6" height="12" rx="1"/><path d="M9 12h6"/></svg>
+  </button>
+  <div class="product-img">
+    <a href="{% url 'shop:product_detail' product.slug %}" aria-label="{{ product.name }}">
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">
+      {% if product.image2 %}<img class="img2" src="{{ product.image2.url }}" alt="" loading="lazy">{% endif %}
+    </a>
+    <div class="card-actions">
+      <a href="{% url 'shop:product_detail' product.slug %}">Vista rapida</a>
+      <a href="#" onclick="cart.add('{{ product.slug }}');return false">Acquisto rapido</a>
+    </div>
+  </div>
+  <div class="product-info">
+    <div class="product-name">{{ product.name }}</div>
+    {% if product.prezzo_barrato %}
+      <span class="product-price sale"><span class="old">€{{ product.prezzo_barrato_formattato }}</span>€{{ product.prezzo_formattato }}</span>
+    {% else %}
+      <span class="product-price">€{{ product.prezzo_formattato }}</span>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,98 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}Carrello — HUSTLER LUXURY{% endblock %}
+{% block description %}Carrello HUSTLER LUXURY: completa il tuo ordine di streetwear italiano. Felpe, magliette, sneakers e coordinati. Pagamento su WhatsApp.{% endblock %}
+
+{% block content %}
+  <section>
+    <h2 class="section-title">Il tuo carrello</h2>
+    <div class="divider"></div>
+
+    <!-- Messaggio carrello vuoto -->
+    <div id="empty-cart" class="text-center" style="display: none; padding: 60px 20px;">
+      <p class="mb-md" style="color: var(--gray-text);">Il tuo carrello è vuoto.</p>
+      <a href="{% url 'shop:collection' %}" class="btn btn-lg">Continua gli acquisti</a>
+    </div>
+
+    <!-- Tabella carrello -->
+    <div id="cart-wrapper" style="display: none;">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Prodotto</th>
+            <th class="cart-price">Prezzo</th>
+            <th>Quantità</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody id="cart-list"></tbody>
+      </table>
+
+      <!-- Riepilogo -->
+      <div id="cart-summary"></div>
+
+      <!-- Form dati cliente -->
+      <div id="checkout-form" style="margin-top: 32px;">
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 16px;">Dati per l'ordine</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <input type="text" id="cliente-nome" placeholder="Nome e Cognome *">
+          </div>
+          <div class="form-group">
+            <input type="tel" id="cliente-telefono" placeholder="Telefono *">
+          </div>
+          <div class="form-group full">
+            <input type="text" id="cliente-indirizzo" placeholder="Indirizzo *">
+          </div>
+          <div class="form-group">
+            <input type="text" id="cliente-citta" placeholder="Città *">
+          </div>
+          <div class="form-group">
+            <input type="text" id="cliente-cap" placeholder="CAP *">
+          </div>
+          <div class="form-group full">
+            <textarea id="cliente-note" rows="3" placeholder="Note (facoltativo)"></textarea>
+          </div>
+          <div class="form-group full">
+            <label style="display: block; font-size: 0.8rem; color: var(--gray-text); margin-bottom: 8px;">Pagamento *</label>
+            <div class="payment-options">
+              <label><input type="radio" name="pagamento" value="contrassegno"> Contrassegno</label>
+              <label><input type="radio" name="pagamento" value="bonifico"> Bonifico</label>
+              <label><input type="radio" name="pagamento" value="paypal"> PayPal</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pulsanti checkout -->
+      <div class="cart-actions">
+        <a href="{% url 'shop:collection' %}" class="btn btn-outline">Continua gli acquisti</a>
+        <button class="btn" onclick="copyOrder()" style="background: var(--gray-light); color: var(--white);">📋 Copia ordine</button>
+        <button class="btn" onclick="clearCartConfirmed()" style="background: transparent; color: var(--gray-text); border: 1px solid var(--border-color);">🗑 Svuota carrello</button>
+        <button class="btn btn-lg" onclick="checkoutWhatsApp()" style="background: var(--gold); color: var(--black);">📱 Ordina su WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informazioni spedizione -->
+  <section style="border-top: 1px solid var(--border-color); margin-top: 32px; padding-top: 32px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
+      <div class="text-center">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">🚚</div>
+        <p style="font-size: 0.85rem; color: var(--gray-text);">Spedizione gratuita sopra €100, altrimenti €5.99</p>
+      </div>
+      <div class="text-center">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">🔄</div>
+        <p style="font-size: 0.85rem; color: var(--gray-text);">Reso gratuito entro 14 giorni</p>
+      </div>
+      <div class="text-center">
+        <div style="font-size: 1.6rem; margin-bottom: 8px;">💳</div>
+        <p style="font-size: 0.85rem; color: var(--gray-text);">Pagamento sicuro su WhatsApp</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mb-lg"></div>
+  <!-- La logica del carrello (renderCart, updateCartView) è gestita in js/app.js:
+       viene eseguita DOPO che products.json (ora window.PRODUCTS_DATA) è caricato. -->
+{% endblock %}

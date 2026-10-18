@@ -1,0 +1,121 @@
+{% load static %}
+{% comment %}
+  base.html — contiene l'header, il footer e i link a CSS/JS condivisi da tutte
+  le pagine. L'HTML dell'header/footer è identico a quanto prodotto da
+  js/app.js (header.render / footer.render) in modo da mantenere il layout
+  originale. I contegni carrello/preferiti vengono aggiornati da app.js sui
+  rispettivi id.
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" width="device-width, initial-scale=1.0">
+  <title>{% block title %}HUSTLER LUXURY — Streetwear{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% endblock %}">
+  <link rel="icon" href="{% static 'shop/images/logo_luxury.jpeg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+</head>
+<body>
+  <!-- Barra annunci + header (identici all'originale js/app.js) -->
+  <div class="announcement-bar"><div class="marquee">
+    <span>Spedizione gratuita da 100€</span><span>Nuovi drop ogni settimana</span><span>Ordina anche su WhatsApp</span>
+    <span>Spedizione gratuita da 100€</span><span>Nuovi drop ogni settimana</span><span>Ordina anche su WhatsApp</span>
+    <span>Spedizione gratuita da 100€</span><span>Nuovi drop ogni settimana</span><span>Ordina anche su WhatsApp</span>
+    <span>Spedizione gratuita da 100€</span><span>Nuovi drop ogni settimana</span><span>Ordina anche su WhatsApp</span>
+  </div></div>
+
+  <header>
+    <div class="header-top">
+      <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <nav class="header-nav nav-main">
+        <a href="{% url 'shop:index' %}">Home</a>
+        <a href="{% url 'shop:collection' %}">Shop <span class="nav-badge">New</span></a>
+        <a href="{% url 'shop:collection' %}">Prodotti</a>
+        <a href="{% url 'shop:index' %}#promo">In offerta <span class="nav-badge sale">Sale</span></a>
+      </nav>
+      <a href="{% url 'shop:index' %}" class="logo"><img src="{% static 'shop/images/logo_luxury.jpeg' %}" alt="Hustler Luxury"></a>
+      <div class="header-icons">
+        <button type="button" class="icon-btn search-toggle" onclick="openSearch()" aria-label="Cerca">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </button>
+        <a href="{% url 'shop:collection' %}" class="icon-btn" id="pref-link" aria-label="Preferiti">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-9-9.2C1.8 7.5 3.8 4 7.2 4c2 0 3.7 1.2 4.8 3 1.1-1.8 2.8-3 4.8-3 3.4 0 5.4 3.5 4.2 6.8C19 15.4 12 20 12 20z"/></svg>
+          <span class="fav-count" id="fav-count" style="display:none">(0)</span>
+        </a>
+        <a href="{% url 'shop:cart' %}" class="icon-btn" aria-label="Carrello">
+          <svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L20 7H6"/><circle cx="9" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg>
+          <span class="cart-count" id="cart-count" style="display:none">0 / €0,00</span>
+        </a>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <span class="menu-close" onclick="toggleMenu()">×</span>
+      <a href="{% url 'shop:index' %}">Home</a>
+      <a href="{% url 'shop:collection' %}">Shop</a>
+      <a href="{% url 'shop:collection' %}">Prodotti</a>
+      <a href="{% url 'shop:index' %}#promo">In offerta</a>
+      <a href="{% url 'shop:cart' %}">Carrello</a>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <!-- WhatsApp float -->
+  <a class="wa-float" href="https://wa.me/393792842837" target="_blank" rel="noopener">Assistenza</a>
+
+  <!-- Footer (identico all'originale) -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h3><img src="{% static 'shop/images/logo_luxury.jpeg' %}" alt="Hustler Luxury"></h3><p style="color:var(--gray-text);font-size:0.85rem">Streetwear da Avezzano.</p></div>
+      <div class="footer-col"><h3>Shop</h3><ul><li><a href="{% url 'shop:index' %}">Home</a></li><li><a href="{% url 'shop:collection' %}">Collezione</a></li><li><a href="{% url 'shop:cart' %}">Carrello</a></li></ul></div>
+      <div class="footer-col"><h3>Contatti</h3><ul>
+        <li style="font-size:.85rem"><strong>HUSTLER LUXURY ditta individuale</strong></li>
+        <li style="font-size:.85rem">Via Roma 93, 67051 Avezzano (AQ)</li>
+        <li style="font-size:.85rem">P.IVA 02203530668</li>
+        <li style="font-size:.85rem">info@hustlerluxury.it</li>
+        <li><a href="https://wa.me/393792842837" target="_blank" rel="noopener">+39 379 284 2837</a></li>
+      </ul></div>
+      <div class="footer-col"><h3>Informazioni</h3><ul>
+        <li><a href="{% url 'shop:privacy' %}">Privacy</a></li>
+        <li><a href="{% url 'shop:termini' %}">Termini di vendita</a></li>
+        <li><a href="{% url 'shop:resi' %}">Spedizioni e resi</a></li>
+        <li><a href="{% url 'shop:recesso' %}">Modulo di recesso</a></li>
+      </ul></div>
+      <div class="footer-col"><h3>Social</h3><div class="social-links">
+        <a href="https://www.instagram.com/hustler__luxury/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@hustler.luxury" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div></div>
+    </div>
+    <div class="footer-bottom">© {% now 'Y' %} HUSTLER LUXURY — Tutti i diritti riservati</div>
+  </footer>
+
+  <button id="back-top" class="back-top">↑</button>
+
+  <!-- Navigazione mobile (fisso, come in js/app.js) -->
+  <nav class="bottom-nav">
+    <a href="{% url 'shop:index' %}" class="nav-item{% if request.resolver_match.url_name == 'index' %} active{% endif %}">Home</a>
+    <a href="{% url 'shop:cart' %}" class="nav-item{% if request.resolver_match.url_name == 'cart' %} active{% endif %}">Carrello</a>
+    <a href="{% url 'shop:collection' %}" class="nav-item{% if request.resolver_match.url_name == 'collection' %} active{% endif %}">Shop</a>
+    <a href="#" class="nav-item search-bottom" onclick="openSearch();return false">Cerca</a>
+  </nav>
+  <div class="bottom-spacer"></div>
+
+  {% comment %}Dati globali usati da app.js (sostituiscono il fetch di products.json){% endcomment %}
+  <script>
+    window.PRODUCTS_DATA = {{ products_json|safe }};
+    window.PRODUCTS_URL = '{% static 'shop/data/products.json' %}';
+    window.URLS = {
+      index: '{% url 'shop:index' %}',
+      collection: '{% url 'shop:collection' %}',
+      cart: '{% url 'shop:cart' %}',
+      detailBase: '/prodotto/'
+    };
+  </script>
+  <script src="{% static 'shop/js/app.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
