@@ -3,6 +3,9 @@ __pycache__/
 *.pyc
 db.sqlite3
 staticfiles/
-media/
+media/*
+!media/products/
+!media/products/foto_per_riguadri.jpeg
+media.zip
 _backup_*/
 _vecchi/

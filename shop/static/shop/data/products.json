@@ -5,8 +5,8 @@
     "categoria": "Felpe & Maglioni",
     "prezzo": 59.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -24,8 +24,8 @@
     "categoria": "T-Shirt",
     "prezzo": 24.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -43,8 +43,8 @@
     "categoria": "Jeans & Pantaloni",
     "prezzo": 39.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -62,8 +62,8 @@
     "categoria": "Coordinati",
     "prezzo": 89.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -81,8 +81,8 @@
     "categoria": "Longsleeve",
     "prezzo": 29.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -100,8 +100,8 @@
     "categoria": "Camicie",
     "prezzo": 44.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -119,8 +119,8 @@
     "categoria": "Giubbini",
     "prezzo": 129.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -138,8 +138,8 @@
     "categoria": "Sneakers",
     "prezzo": 79.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -157,8 +157,8 @@
     "categoria": "Felpe & Maglioni",
     "prezzo": 49.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -177,8 +177,8 @@
     "prezzo": 9.99,
     "prezzoBarrato": 22.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -196,8 +196,8 @@
     "categoria": "Jeans & Pantaloni",
     "prezzo": 49.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -215,8 +215,8 @@
     "categoria": "Coordinati",
     "prezzo": 79.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -234,8 +234,8 @@
     "categoria": "Longsleeve",
     "prezzo": 26.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -253,8 +253,8 @@
     "categoria": "Camicie",
     "prezzo": 39.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -272,8 +272,8 @@
     "categoria": "Giubbini",
     "prezzo": 99.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -291,8 +291,8 @@
     "categoria": "Sneakers",
     "prezzo": 89.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -310,8 +310,8 @@
     "categoria": "Felpe & Maglioni",
     "prezzo": 69.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -330,8 +330,8 @@
     "prezzo": 9.99,
     "prezzoBarrato": 21.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -350,8 +350,8 @@
     "prezzo": 9.99,
     "prezzoBarrato": 42.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -369,8 +369,8 @@
     "categoria": "Coordinati",
     "prezzo": 69.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -388,8 +388,8 @@
     "categoria": "Longsleeve",
     "prezzo": 32.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -407,8 +407,8 @@
     "categoria": "Camicie",
     "prezzo": 37.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -426,8 +426,8 @@
     "categoria": "Giubbini",
     "prezzo": 119.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
@@ -445,8 +445,8 @@
     "categoria": "Sneakers",
     "prezzo": 69.99,
     "immagini": [
-      "/products/foto_per_riguadri.jpeg",
-      "/products/foto_per_riguadri.jpeg"
+      "/media/products/foto_per_riguadri.jpeg",
+      "/media/products/foto_per_riguadri.jpeg"
     ],
     "taglie": [
       "S",
