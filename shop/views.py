@@ -1,7 +1,19 @@
 """Viste dell'app shop — una per ogni pagina HTML originale."""
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import Product
+
+
+def robots_txt(request):
+    return HttpResponse(
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /admin/\n"
+        "Disallow: /carrello/\n"
+        "Sitemap: https://hustlerluxury.pythonanywhere.com/sitemap.xml\n",
+        content_type='text/plain'
+    )
 
 
 def _categorie_disponibili():

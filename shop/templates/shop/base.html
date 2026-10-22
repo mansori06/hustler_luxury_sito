@@ -10,9 +10,14 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" width="device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}HUSTLER LUXURY — Streetwear{% endblock %}</title>
-  <meta name="description" content="{% block description %}{% endblock %}">
+  <meta name="description" content="{% block description %}HUSTLER LUXURY: streetwear italiano. Felpe, t-shirt, jeans, sneakers e coordinati. Spedizione gratuita sopra €100.{% endblock %}">
+  <meta name="google-site-verification" content="coGkhESl6iup4gnXEQaAj8mgT3nSDT0ut-CnlLsf8Ak" />
+  <meta property="og:title" content="{% block og_title %}HUSTLER LUXURY — Streetwear{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}HUSTLER LUXURY: streetwear italiano. Felpe, t-shirt, jeans, sneakers e coordinati. Spedizione gratuita sopra €100.{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
   <link rel="icon" href="{% static 'shop/images/logo_luxury.jpeg' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

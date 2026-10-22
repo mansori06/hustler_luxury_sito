@@ -1,7 +1,9 @@
 {% extends 'shop/base.html' %}
 {% load static %}
-{% block title %}Prodotto — HUSTLER LUXURY{% endblock %}
-{% block description %}HUSTLER LUXURY: streetwear italiano nero e oro. Felpe, magliette, sneakers e coordinati in stile urbano.{% endblock %}
+{% block title %}{{ product.name }} — HUSTLER LUXURY{% endblock %}
+{% block og_title %}{{ product.name }} — HUSTLER LUXURY{% endblock %}
+{% block description %}{{ product.name }} — HUSTLER LUXURY. {{ product.description|truncatechars:120 }}{% endblock %}
+{% block og_description %}{{ product.name }} — HUSTLER LUXURY. {{ product.description|truncatechars:120 }}{% endblock %}
 
 {% block content %}
   <section>
